@@ -1,0 +1,64 @@
+// These styles usually part of uncompiled bootstrap ...........................
+
+// These should be defined in variables.less
+@red: indianred;
+@yellow: yellow;
+
+// This is from forms.less
+@shadow: 0 0 6px lighten(#ee5f5b, 20%);
+
+// This is from mixins.less
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+// Custom styling starts here ..................................................
+
+.error {
+  // This is for the popover.
+  color: @red;
+}
+
+// We re-use the bootstrap styling (from forms.less)
+// but adapt it to work with the validation plugin.
+// Sometime we want to mark related elements as errors,
+// especially when using custom rules or hidden inputs.
+// The error_manual class can be used for this.
+// TODO Add and example.
+input.error,
+textarea.error,
+select.error,
+input.error_manual,
+textarea.error_manual,
+select.error_manual {
+  color: @red;
+  border-color: @red;
+  background: lighten(@red, 60%);
+  &:focus {
+    border-color: darken(@red, 10%);
+    @shadow: 0 0 6px lighten(@red, 20%);
+    .box-shadow(@shadow);
+  }
+}
+@errorBackgroundColor: lighten(@yellow, 30%);
+.tooltip.error {
+  &.top .tooltip-arrow {
+    border-top-color: @errorBackgroundColor;
+  }
+  &.right .tooltip-arrow {
+    border-right-color: @errorBackgroundColor;
+  }
+  &.left .tooltip-arrow {
+    border-left-color: @errorBackgroundColor;
+  }
+  &.bottom .tooltip-arrow {
+    border-bottom-color: @errorBackgroundColor;
+  }
+}
+.tooltip.error .tooltip-inner  {
+  background: @errorBackgroundColor;
+  color: @red;
+  font-weight: bold;
+}
