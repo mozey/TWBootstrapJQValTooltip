@@ -1,19 +1,16 @@
-#Popover Error Messages with JQuery Validation and Twitter Bootstrap
+#Tooltip Error Messages with JQuery Validation and Twitter Bootstrap
 
-Displays error messages as [Twitter Bootstrap Popovers] (http://twitter.github.com/bootstrap/javascript.html#popovers) instead of inline text.
+Displays error messages as [Twitter Bootstrap Popovers] (http://twitter.github.com/bootstrap/javascript.html#tooltips) instead of inline text.
 
 ##Usage
 
 Include the `jquery.validate.bootstrap.js` along with the jquery validation scripts
 
 ###Basic
-Display an required error message to the right of the input:
+Display a required error message above the input:
 
     <input type="text" data-rule-required="true"/>
 
-###Default Values
-Using the twitter bootstrap default values:
+Display a required error message to the right of an input:
 
-    <input type="text" title="Error Message Title"
-    	data-rule-required="true" 
-        data-placement="bottom" />
+    <input type="text" data-rule-required="true" data-placement="right"/>
