@@ -14,3 +14,6 @@ Display a required error message above the input:
 Display a required error message to the right of an input:
 
     <input type="text" data-rule-required="true" data-placement="right"/>
+
+###Examples
+Clone the repos and open index.html
